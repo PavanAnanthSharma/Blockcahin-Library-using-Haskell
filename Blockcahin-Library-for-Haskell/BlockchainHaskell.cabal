@@ -1,0 +1,80 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 10d2eab0f17c58dd53df9cef3dbd1e6850c6c0cf659c1ff42268c04d8bd0c171
+
+name:           BlockchainHaskell
+version:        0.1.0.0
+description:    Please see the README on Github at <https://github.com/aidatorajiro/blockchain-haskell#readme>
+homepage:       https://github.com/aidatorajiro/blockchain-haskell#readme
+bug-reports:    https://github.com/aidatorajiro/blockchain-haskell/issues
+author:         Torajiro Aida
+maintainer:     kawarusosu@zoho.com
+copyright:      2018 Torajiro Aida
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/aidatorajiro/blockchain-haskell
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , base16-bytestring
+    , binary
+    , bytestring
+    , hspec
+  exposed-modules:
+      Bitcoin
+      Lib
+      Transaction
+      ParserUtil
+  other-modules:
+      Paths_BlockchainHaskell
+  default-language: Haskell2010
+
+executable BlockchainHaskell-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      BlockchainHaskell
+    , QuickCheck
+    , base >=4.7 && <5
+    , base16-bytestring
+    , binary
+    , bytestring
+    , hspec
+  other-modules:
+      Paths_BlockchainHaskell
+  default-language: Haskell2010
+
+test-suite BlockchainHaskell-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      BlockchainHaskell
+    , QuickCheck
+    , base >=4.7 && <5
+    , base16-bytestring
+    , binary
+    , bytestring
+    , hspec
+  other-modules:
+      ParseTransactionSpec
+      Paths_BlockchainHaskell
+  default-language: Haskell2010

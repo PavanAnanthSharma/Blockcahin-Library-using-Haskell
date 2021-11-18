@@ -100,7 +100,7 @@ main = print $ putTransactionToHexString $ Transaction {
 - Verification
 - Signing
 - Simulate a Bitcoin system monadically
-- 
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 > ```0x592eF244F8924be9F3F8803f8d639392f465Ac51```
